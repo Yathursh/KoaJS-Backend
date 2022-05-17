@@ -13,7 +13,7 @@ export const save = ({ text }) => {
 };
 
 export const get = (id) => {
-  const post = carts.get(id);
+  const cart = carts.get(id);
   if (!cart) {
     throw new Error(`Not founded  ${id}`);
   }
@@ -33,7 +33,7 @@ export const update = (id, { text }) => {
     text,
     postedDate: new Date(),
   };
-  carts.set(post.id, cart);
+  carts.set(cart.id, cart);
   return cart;
 };
 
